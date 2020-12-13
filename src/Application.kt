@@ -7,7 +7,7 @@ import io.ktor.routing.*
 fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 
 @kotlin.jvm.JvmOverloads
-fun Application.module(@Suppress("UNUSED_PARAMETER") testing: Boolean = false) {
+fun Application.restApiModule(@Suppress("UNUSED_PARAMETER") testing: Boolean = false) {
     routing {
         get("/greeting") {
             call.respondText("Hello")
