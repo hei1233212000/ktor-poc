@@ -1,2 +1,6 @@
-=== Run
+=== Run by Gradle
 `./gradlew run`
+
+=== Run by FatJar
+1. build the project first by `./gradlew clean build`
+2. run `java -jar build/libs/ktor-poc-0.0.1-all.jar`

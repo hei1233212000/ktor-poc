@@ -1,3 +1,5 @@
+import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+
 val ktorVersion: String by project
 val logbackVersion: String by project
 val junitVersion: String by project
@@ -7,6 +9,7 @@ val spekVersion: String by project
 plugins {
     application
     kotlin("jvm")
+    id("com.github.johnrengelman.shadow")
 }
 
 group = "poc"
@@ -42,4 +45,10 @@ sourceSets["test"].resources.srcDirs("testresources")
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+tasks.withType<ShadowJar> {
+    manifest {
+        attributes("Main-Class" to application.mainClassName)
+    }
 }
