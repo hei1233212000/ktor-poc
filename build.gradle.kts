@@ -2,6 +2,7 @@ val ktorVersion: String by project
 val logbackVersion: String by project
 val junitVersion: String by project
 val kluentVersion: String by project
+val spekVersion: String by project
 
 plugins {
     application
@@ -23,10 +24,14 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("io.ktor:ktor-server-netty:$ktorVersion")
     implementation("ch.qos.logback:logback-classic:$logbackVersion")
+
     testImplementation("io.ktor:ktor-server-tests:$ktorVersion")
     testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
     testImplementation("org.amshove.kluent:kluent:$kluentVersion")
+    testImplementation("org.spekframework.spek2:spek-dsl-jvm:$spekVersion")
+    testRuntimeOnly("org.spekframework.spek2:spek-runner-junit5:$spekVersion")
+    testRuntimeOnly(kotlin("reflect"))
 }
 
 kotlin.sourceSets["main"].kotlin.srcDirs("src")
