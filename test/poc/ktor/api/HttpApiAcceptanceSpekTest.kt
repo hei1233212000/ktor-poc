@@ -8,6 +8,9 @@ import org.spekframework.spek2.Spek
 import org.spekframework.spek2.style.gherkin.Feature
 import poc.restApiModule
 
+/**
+ * Seems like using Ktor + Spek is not a good combination
+ */
 object HttpApiAcceptanceSpekTest : Spek({
     Feature("Greeting") {
         Scenario("adding items") {
