@@ -5,6 +5,7 @@ val logbackVersion: String by project
 val junitVersion: String by project
 val kluentVersion: String by project
 val spekVersion: String by project
+val koinVersion: String by project
 
 plugins {
     application
@@ -27,6 +28,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("io.ktor:ktor-server-netty:$ktorVersion")
     implementation("io.ktor:ktor-gson:$ktorVersion")
+    implementation("org.koin:koin-ktor:$koinVersion")
     implementation("ch.qos.logback:logback-classic:$logbackVersion")
 
     testImplementation("io.ktor:ktor-server-tests:$ktorVersion")
